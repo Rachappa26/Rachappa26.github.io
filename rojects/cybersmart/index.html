@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberSmart is a short interactive cybersecurity awareness learning demo.">
+  <title>CyberSmart | Cybersecurity Awareness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="CyberSmart home">
+      <span class="brand-mark" aria-hidden="true">✓</span>
+      <span>Cyber<span class="brand-accent">Smart</span></span>
+    </a>
+    <div class="header-label">EMPLOYEE LEARNING · DEMO</div>
+  </header>
 
+  <main class="shell">
+    <section class="hero" id="intro">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> CYBERSECURITY AWARENESS</div>
+      <h1>Pause. Think.<br><span class="gradient-text">Stay CyberSmart.</span></h1>
+      <p class="hero-copy">Small decisions can make a big difference. Practise spotting suspicious messages, protecting your accounts, and responding safely to a potential incident.</p>
+      <div class="hero-meta">
+        <span><span class="meta-icon">◷</span> 5–7 minutes</span>
+        <span><span class="meta-icon">◎</span> 3 learning objectives</span>
+        <span><span class="meta-icon">✦</span> Interactive practice</span>
+      </div>
+      <button class="primary-btn" id="startBtn">Start learning <span aria-hidden="true">→</span></button>
+      <p class="microcopy">No personal information is collected. This is a learning demonstration.</p>
+    </section>
+
+    <section class="learning-view hidden" id="learningView" aria-live="polite">
+      <div class="progress-wrap">
+        <div class="progress-top"><span id="stepLabel">STEP 1 OF 4</span><span id="progressPercent">25%</span></div>
+        <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-kicker" id="lessonKicker">MODULE 01 · PHISHING</div>
+        <h2 id="lessonTitle">Spot the warning signs</h2>
+        <p class="lesson-intro" id="lessonIntro"></p>
+        <div id="lessonContent"></div>
+        <div class="lesson-footer">
+          <span class="footer-note" id="footerNote">Choose the best response to continue.</span>
+          <button class="primary-btn" id="continueBtn" disabled>Continue <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="results hidden" id="resultsView" aria-live="polite">
+      <div class="result-icon" id="resultIcon">✓</div>
+      <div class="eyebrow centered">LEARNING COMPLETE</div>
+      <h2 id="resultTitle">Nice work!</h2>
+      <p id="resultSummary"></p>
+      <div class="score-card">
+        <span class="score-number" id="scoreNumber">0/3</span>
+        <span class="score-label">knowledge check score</span>
+      </div>
+      <div class="takeaways">
+        <h3>Remember these three habits</h3>
+        <ul>
+          <li><strong>Pause:</strong> Check the sender, links, requests, and urgency before acting.</li>
+          <li><strong>Protect:</strong> Use unique passwords and multi-factor authentication where available.</li>
+          <li><strong>Report:</strong> Follow your organisation's approved process for suspicious messages or incidents.</li>
+        </ul>
+      </div>
+      <div class="result-actions">
+        <button class="primary-btn" id="restartBtn">Try again <span aria-hidden="true">↻</span></button>
+        <button class="secondary-btn" id="reviewBtn">Review key habits</button>
+      </div>
+      <p class="microcopy">Training demo only. Always follow your organisation's security policies and reporting procedures.</p>
+    </section>
+
+    <aside class="help-strip">
+      <span class="help-icon">i</span>
+      <p><strong>Learning tip:</strong> When in doubt, don't click, reply, or share credentials. Verify through a trusted channel and use your organisation's reporting process.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <span>CyberSmart · Instructional Design Portfolio Project</span>
+    <span>Designed for practice, not as a substitute for organisational policy.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
