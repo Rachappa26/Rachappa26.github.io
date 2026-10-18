@@ -1,30 +1,87 @@
-# Rachappa C T — Instructional Design Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberSmart is a short interactive cybersecurity awareness learning demo.">
+  <title>CyberSmart | Cybersecurity Awareness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="CyberSmart home">
+      <span class="brand-mark" aria-hidden="true">✓</span>
+      <span>Cyber<span class="brand-accent">Smart</span></span>
+    </a>
+    <div class="header-label">EMPLOYEE LEARNING · DEMO</div>
+  </header>
 
-A responsive, single-page portfolio website for GitHub Pages with a clean white layout and blue/purple accents.
+  <main class="shell">
+    <section class="hero" id="intro">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> CYBERSECURITY AWARENESS</div>
+      <h1>Pause. Think.<br><span class="gradient-text">Stay CyberSmart.</span></h1>
+      <p class="hero-copy">Small decisions can make a big difference. Practise spotting suspicious messages, protecting your accounts, and responding safely to a potential incident.</p>
+      <div class="hero-meta">
+        <span><span class="meta-icon">◷</span> 5–7 minutes</span>
+        <span><span class="meta-icon">◎</span> 3 learning objectives</span>
+        <span><span class="meta-icon">✦</span> Interactive practice</span>
+      </div>
+      <button class="primary-btn" id="startBtn">Start learning <span aria-hidden="true">→</span></button>
+      <p class="microcopy">No personal information is collected. This is a learning demonstration.</p>
+    </section>
 
-## Before publishing
-1. Open `index.html` and check your name, email, LinkedIn URL, job history, dates, education and certifications.
-2. Replace the sample project cards with real work samples or clearly labelled concept projects.
-3. Do not publish confidential client/employer material. Use fictional/redacted examples when needed.
-4. Consider adding a PDF resume link only after you decide to share your resume publicly. The starter does not publish your uploaded resume.
+    <section class="learning-view hidden" id="learningView" aria-live="polite">
+      <div class="progress-wrap">
+        <div class="progress-top"><span id="stepLabel">STEP 1 OF 4</span><span id="progressPercent">25%</span></div>
+        <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-kicker" id="lessonKicker">MODULE 01 · PHISHING</div>
+        <h2 id="lessonTitle">Spot the warning signs</h2>
+        <p class="lesson-intro" id="lessonIntro"></p>
+        <div id="lessonContent"></div>
+        <div class="lesson-footer">
+          <span class="footer-note" id="footerNote">Choose the best response to continue.</span>
+          <button class="primary-btn" id="continueBtn" disabled>Continue <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
 
-## Publish with GitHub Pages
-1. Sign in at https://github.com/
-2. Click **New repository**.
-3. Name it `rachappa.github.io` if you want the URL `https://rachappa.github.io/` (replace `rachappa` with your exact GitHub username). Alternatively, name it `portfolio` for a project site URL.
-4. Choose **Public**, then click **Create repository**.
-5. Click **Add file → Upload files**.
-6. Upload `index.html` and `README.md` from this folder. Drag the files themselves, not the ZIP.
-7. Click **Commit changes**.
-8. Open **Settings → Pages**.
-9. Under **Build and deployment**, select **Deploy from a branch**.
-10. Select branch **main** and folder **/(root)**, then click **Save**.
-11. Wait a few minutes and refresh the Pages settings. Open the published URL shown there.
+    <section class="results hidden" id="resultsView" aria-live="polite">
+      <div class="result-icon" id="resultIcon">✓</div>
+      <div class="eyebrow centered">LEARNING COMPLETE</div>
+      <h2 id="resultTitle">Nice work!</h2>
+      <p id="resultSummary"></p>
+      <div class="score-card">
+        <span class="score-number" id="scoreNumber">0/3</span>
+        <span class="score-label">knowledge check score</span>
+      </div>
+      <div class="takeaways">
+        <h3>Remember these three habits</h3>
+        <ul>
+          <li><strong>Pause:</strong> Check the sender, links, requests, and urgency before acting.</li>
+          <li><strong>Protect:</strong> Use unique passwords and multi-factor authentication where available.</li>
+          <li><strong>Report:</strong> Follow your organisation's approved process for suspicious messages or incidents.</li>
+        </ul>
+      </div>
+      <div class="result-actions">
+        <button class="primary-btn" id="restartBtn">Try again <span aria-hidden="true">↻</span></button>
+        <button class="secondary-btn" id="reviewBtn">Review key habits</button>
+      </div>
+      <p class="microcopy">Training demo only. Always follow your organisation's security policies and reporting procedures.</p>
+    </section>
 
-## Updating the site
-Edit `index.html` in the repository using the pencil icon, or edit locally and upload the revised file. Commit your changes; GitHub Pages will publish the update.
+    <aside class="help-strip">
+      <span class="help-icon">i</span>
+      <p><strong>Learning tip:</strong> When in doubt, don't click, reply, or share credentials. Verify through a trusted channel and use your organisation's reporting process.</p>
+    </aside>
+  </main>
 
-## Notes
-- This uses plain HTML, CSS and JavaScript; no build tools or paid hosting are required.
-- The project cards are placeholders, not claims that these are completed projects.
-- Review contact details before publishing. The website email and LinkedIn link were taken from the supplied resume.
+  <footer class="site-footer">
+    <span>CyberSmart · Instructional Design Portfolio Project</span>
+    <span>Designed for practice, not as a substitute for organisational policy.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
