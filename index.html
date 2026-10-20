@@ -122,6 +122,46 @@
       .cert-list { columns:1; }
       .contact-box { padding:25px; }
     }
+
+    /* Visual-first enhancements */
+    .hero {padding:86px 0 66px}
+    .hero-grid {grid-template-columns:1fr 1fr;gap:45px}
+    .hero h1 {font-size:clamp(2.7rem,5vw,4.9rem)}
+    .visual-board {position:relative; background:linear-gradient(150deg,#fff,#f5f3ff);border:1px solid #dfe2f6;border-radius:26px;padding:23px;box-shadow:var(--shadow);overflow:hidden}
+    .visual-board:before {content:'';position:absolute;inset:0;background-image:radial-gradient(#818cf8 1px,transparent 1px);background-size:21px 21px;opacity:.16;pointer-events:none}
+    .board-top,.board-bottom {position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .board-kicker {font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6d5bd4;font-weight:800}
+    .board-dot {width:10px;height:10px;border-radius:50%;background:#34d399;box-shadow:0 0 0 5px #d1fae5}
+    .journey {position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 22px}
+    .journey:before {content:'';position:absolute;left:12%;right:12%;top:39px;border-top:2px dashed #c7c5fa}
+    .journey-step {position:relative;z-index:1;display:flex;align-items:center;flex-direction:column;text-align:center;gap:9px}
+    .journey-icon {width:76px;height:76px;display:grid;place-items:center;background:white;border:1px solid #dadbf6;border-radius:21px;box-shadow:0 10px 25px rgba(60,56,135,.09)}
+    .journey-icon svg {width:43px;height:43px;stroke:#5b50d7;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .journey-step strong {font-size:.86rem;line-height:1.2}
+    .journey-step small {font-size:.73rem;color:var(--muted)}
+    .board-bottom {background:#f0edff;border-radius:15px;padding:12px 15px;font-size:.81rem;color:#4c3fa8}
+    .board-bottom strong {color:#312e81}
+    .visual-stats {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .visual-stat {padding:12px;background:white;border:1px solid var(--line);border-radius:14px;text-align:center}
+    .visual-stat strong {display:block;font-size:1.25rem;color:#5145cf;line-height:1.25}
+    .visual-stat span {display:block;font-size:.7rem;color:var(--muted)}
+    .project-art {height:184px;min-height:184px;padding:0;align-items:center;justify-content:center}
+    .project-art:after {display:none}
+    .project-art svg {width:100%;height:100%;display:block;position:relative;z-index:1;transition:transform .35s ease}
+    .project:hover .project-art svg {transform:scale(1.035)}
+    .project-body p {display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .project-body {padding:21px 23px 24px}
+    .project-body h3 {font-size:1.15rem;line-height:1.35}
+    .skill-icon {width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#ede9fe;color:#5445c5}
+    .stat {transition:transform .2s}.stat:hover {transform:translateY(-3px)}
+    .mini-process {display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .mini-process span {background:#f1efff;border:1px solid #e3defe;border-radius:999px;padding:6px 11px;font-size:.76rem;color:#5547a9}
+    .compact-details {margin-top:16px;background:white;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+    .compact-details summary {cursor:pointer;font-weight:700;color:#4f46e5}
+    .compact-details .tool-cloud {margin:14px 0 0}
+    .section-head {max-width:760px}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.visual-board{max-width:630px}}
+    @media(max-width:620px){.journey{gap:6px}.journey-icon{width:64px;height:64px}.journey-icon svg{width:35px;height:35px}.journey-step small{font-size:.67rem}.visual-board{padding:16px}.visual-stats{gap:7px}.visual-stat{padding:9px 4px}}
   </style>
 </head>
 <body>
@@ -148,20 +188,24 @@
           </div>
           <div class="quick-tags"><span class="tag">13+ years in L&amp;D</span><span class="tag">Learning strategy</span><span class="tag">Digital learning</span></div>
         </div>
-        <aside class="hero-card" aria-label="Professional focus">
-          <div class="orb" aria-hidden="true">✳</div>
-          <h3>Design with purpose.</h3>
-          <p>From a business challenge to a learning experience: thoughtful decisions, purposeful design, measurable outcomes.</p>
-          <div class="quick-tags"><span class="tag">Explore</span><span class="tag">Create</span><span class="tag">Improve</span></div>
+        <aside class="visual-board" aria-label="Visual overview of the learning design process">
+          <div class="board-top"><span class="board-kicker">From challenge to impact</span><span class="board-dot" aria-hidden="true"></span></div>
+          <div class="journey">
+            <div class="journey-step"><div class="journey-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="12"/><path d="m30 30 10 10M16 21h10m-5-5v10"/></svg></div><strong>Discover</strong><small>Find the need</small></div>
+            <div class="journey-step"><div class="journey-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="8" width="30" height="32" rx="5"/><path d="M16 17h16M16 24h16M16 31h9"/><circle cx="35" cy="34" r="7" fill="#ede9fe"/><path d="m32 34 2 2 4-5"/></svg></div><strong>Design</strong><small>Build practice</small></div>
+            <div class="journey-step"><div class="journey-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 35V13m0 22h32"/><path d="m14 28 8-8 7 5 11-13"/><path d="M33 12h7v7"/></svg></div><strong>Improve</strong><small>Measure impact</small></div>
+          </div>
+          <div class="board-bottom"><span>Learning design is a <strong>performance solution</strong>, not just content.</span><span aria-hidden="true">↗</span></div>
+          <div class="visual-stats"><div class="visual-stat"><strong>13+</strong><span>Years in L&amp;D</span></div><div class="visual-stat"><strong>4</strong><span>Portfolio projects</span></div><div class="visual-stat"><strong>3</strong><span>Core strengths</span></div></div>
         </aside>
       </div>
     </section>
 
     <section id="about">
       <div class="wrap">
-        <div class="section-head reveal"><div class="eyebrow">About me</div><h2>Experience that connects learning and performance.</h2><p>With 13+ years across higher education and corporate learning, I bring together instructional design, digital learning development, and team leadership. My focus is on clear learning goals, useful practice, and solutions that work in the real world.</p></div>
+        <div class="section-head reveal"><div class="eyebrow">About me</div><h2>Experience that connects learning and performance.</h2><p>I connect business needs with learner-centered solutions—combining learning strategy, digital experiences, and team leadership.</p></div>
         <div class="about-grid">
-          <div class="panel reveal"><h3>My approach</h3><p>I start with the performance need, then choose the right learning approach. I collaborate with subject matter experts, shape content into meaningful practice, and review the result for clarity, accessibility, and quality.</p></div>
+          <div class="panel reveal"><h3>My approach</h3><p>Diagnose the challenge. Design meaningful practice. Evaluate what changes.</p><div class="mini-process"><span>Analyze</span><span>Design</span><span>Develop</span><span>Evaluate</span></div></div>
           <div class="stat-grid reveal">
             <div class="stat"><strong>13+ yrs</strong><span>Learning &amp; Development</span></div>
             <div class="stat"><strong>4 formats</strong><span>ILT · VILT · WBT · eLearning</span></div>
@@ -181,19 +225,18 @@
           <article class="skill-card reveal"><div class="skill-icon">◈</div><h3>Learning Operations</h3><p>Team coordination, SME collaboration, LMS support, quality reviews, and learning evaluation.</p></article>
         </div>
         <div class="tool-cloud reveal" aria-label="Software and platforms">
-          <span class="tool">Articulate Storyline 360</span><span class="tool">Articulate Rise 360</span><span class="tool">Adobe Captivate</span><span class="tool">Camtasia</span><span class="tool">Vyond</span><span class="tool">Canva</span><span class="tool">PowerPoint</span><span class="tool">Moodle</span><span class="tool">Reach 360</span><span class="tool">Workday LMS</span><span class="tool">Power BI</span><span class="tool">Technical Writing</span>
-        </div>
+          <span class="tool">Articulate Storyline 360</span><span class="tool">Articulate Rise 360</span><span class="tool">Adobe Captivate</span><span class="tool">Camtasia</span><span class="tool">Vyond</span><span class="tool">Canva</span></div><details class="compact-details"><summary>More tools &amp; platforms</summary><div class="tool-cloud"><span class="tool">PowerPoint</span><span class="tool">Moodle</span><span class="tool">Reach 360</span><span class="tool">Workday LMS</span><span class="tool">Power BI</span><span class="tool">Technical Writing</span></div></details>
       </div>
     </section>
 
     <section id="projects">
       <div class="wrap">
-        <div class="section-head reveal"><div class="eyebrow">Selected work</div><h2>Projects that show how I think.</h2><p>Four selected portfolio projects showing how I approach design challenges, create learning experiences, and evaluate decisions. These are demonstrations and simulated case studies.</p></div>
+        <div class="section-head reveal"><div class="eyebrow">Selected work</div><h2>Projects that show how I think.</h2><p>Four hands-on demos and simulated case studies. Choose a project to explore.</p></div>
         <div class="filters" role="group" aria-label="Filter projects">
           <button class="filter active" data-filter="all" aria-pressed="true">All projects</button><button class="filter" data-filter="elearning" aria-pressed="false">eLearning</button><button class="filter" data-filter="planning" aria-pressed="false">Design & planning</button><button class="filter" data-filter="video" aria-pressed="false">Video & microlearning</button>
         </div>
         <div class="project-grid"><article class="project reveal" data-category="elearning">
-  <div class="project-art"><span>🛡️</span></div>
+  <div class="project-art"><svg viewBox="0 0 520 190" role="img" aria-label="Cybersecurity shield and protected messages"><defs><linearGradient id="gcy" x2="1" y2="1"><stop stop-color="#e1f5ff"/><stop offset="1" stop-color="#e9e7ff"/></linearGradient></defs><rect width="520" height="190" fill="url(#gcy)"/><circle cx="420" cy="30" r="95" fill="#c7d2fe" opacity=".45"/><rect x="42" y="34" width="215" height="125" rx="16" fill="white" stroke="#bdc8f8"/><rect x="61" y="54" width="175" height="16" rx="6" fill="#e5e7ff"/><rect x="61" y="84" width="126" height="10" rx="5" fill="#e5e7ff"/><rect x="61" y="106" width="154" height="10" rx="5" fill="#e5e7ff"/><rect x="61" y="131" width="72" height="13" rx="6" fill="#a5b4fc"/><path d="M358 29 417 51v44c0 35-24 58-59 72-35-14-59-37-59-72V51z" fill="#4f46e5"/><path d="m333 94 17 18 35-38" fill="none" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="project-body">
     <h3>CyberSmart: Cybersecurity Awareness</h3>
     <p>
@@ -213,9 +256,7 @@
 </article>
 
 <article class="project reveal" data-category="video">
-  <div class="project-art">
-    <span>🎬</span>
-  </div>
+  <div class="project-art"><svg viewBox="0 0 520 190" role="img" aria-label="Video learning player and AI prompt illustration"><defs><linearGradient id="gvi" x2="1" y2="1"><stop stop-color="#e7e6ff"/><stop offset="1" stop-color="#f8e9ff"/></linearGradient></defs><rect width="520" height="190" fill="url(#gvi)"/><circle cx="80" cy="160" r="92" fill="#ddd6fe" opacity=".7"/><rect x="94" y="26" width="333" height="140" rx="18" fill="white" stroke="#d4cffa" stroke-width="2"/><rect x="112" y="42" width="297" height="96" rx="11" fill="#373079"/><path d="m239 66 48 24-48 24z" fill="#e9d5ff"/><rect x="116" y="150" width="235" height="5" rx="2" fill="#ddd6fe"/><rect x="116" y="150" width="104" height="5" rx="2" fill="#7c3aed"/><circle cx="375" cy="151" r="6" fill="#7c3aed"/><path d="M356 58l7 12 14 4-14 4-7 12-7-12-14-4 14-4z" fill="#c4b5fd"/></svg></div>
   <div class="project-body">
     <h3>Think Before You Prompt</h3>
     <p>
@@ -236,9 +277,7 @@
 
 
 <article class="project reveal" data-category="planning">
-  <div class="project-art">
-    <span>📊</span>
-  </div>
+  <div class="project-art"><svg viewBox="0 0 520 190" role="img" aria-label="Training needs analysis performance chart"><defs><linearGradient id="gta" x2="1" y2="1"><stop stop-color="#e4f4ff"/><stop offset="1" stop-color="#e6e5ff"/></linearGradient></defs><rect width="520" height="190" fill="url(#gta)"/><rect x="56" y="25" width="407" height="140" rx="17" fill="white" stroke="#cdd5f7"/><path d="M90 131H432M90 98H432M90 65H432" stroke="#e6eafb" stroke-width="2"/><rect x="117" y="102" width="44" height="29" rx="5" fill="#c7d2fe"/><rect x="194" y="82" width="44" height="49" rx="5" fill="#a5b4fc"/><rect x="271" y="62" width="44" height="69" rx="5" fill="#818cf8"/><rect x="348" y="42" width="44" height="89" rx="5" fill="#4f46e5"/><path d="m130 91 85-30 76 3 76-39" stroke="#16a34a" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="367" cy="25" r="7" fill="#16a34a"/></svg></div>
   <div class="project-body">
     <h3>Sales Performance Improvement — TNA &amp; Learning Strategy</h3>
     <p>
@@ -259,9 +298,7 @@
 
 
 <article class="project reveal" data-category="elearning">
-  <div class="project-art">
-    <span>🎯</span>
-  </div>
+  <div class="project-art"><svg viewBox="0 0 520 190" role="img" aria-label="Branching decisions and project trade-offs"><defs><linearGradient id="gdd" x2="1" y2="1"><stop stop-color="#e7e6ff"/><stop offset="1" stop-color="#dff7f5"/></linearGradient></defs><rect width="520" height="190" fill="url(#gdd)"/><path d="M150 95h75m0 0 56-47m-56 47 56 47" fill="none" stroke="#aaa3ef" stroke-width="5" stroke-linecap="round"/><rect x="58" y="64" width="113" height="62" rx="13" fill="#4f46e5"/><circle cx="97" cy="86" r="7" fill="white"/><path d="M116 86h31M89 104h55" stroke="white" stroke-width="5" stroke-linecap="round"/><rect x="280" y="21" width="167" height="57" rx="13" fill="white" stroke="#b3c7e9"/><circle cx="307" cy="49" r="11" fill="#22c55e"/><path d="m302 49 4 4 7-9" fill="none" stroke="white" stroke-width="3"/><path d="M329 43h94m-94 11h64" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/><rect x="280" y="113" width="167" height="57" rx="13" fill="white" stroke="#b3c7e9"/><circle cx="307" cy="141" r="11" fill="#f59e0b"/><path d="M307 134v8m0 5v1" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M329 136h94m-94 11h64" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/></svg></div>
 
   <div class="project-body">
     <h3>The Deadline Dilemma — Branching eLearning Simulation</h3>
@@ -308,9 +345,9 @@
       <div class="wrap">
         <div class="section-head reveal"><div class="eyebrow">Continuous learning</div><h2>Certifications & recognition</h2></div>
         <div class="panel reveal">
-          <ul class="cert-list">
+          <details class="compact-details"><summary>View courses &amp; certifications</summary><ul class="cert-list">
             <li>Instructional Design: Needs Analysis</li><li>Working with SMEs</li><li>Measuring Learning Effectiveness</li><li>Instructional Design: Adult Learners</li><li>Creating Video Learning</li><li>e-Learning Essentials: Storyboarding</li><li>Agile Instructional Design</li><li>Leadership Excellence in Academic Development</li><li>AI for Everyone: Prompt Engineering</li>
-          </ul>
+          </ul></details>
           <p style="margin-top:12px">Recognition: Team Action Award (Q1 2023) and SPOT Award (Q1 2025), Straive.</p>
         </div>
       </div>
