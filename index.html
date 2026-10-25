@@ -133,7 +133,7 @@
     .board-top,.board-bottom {position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .board-kicker {font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6d5bd4;font-weight:800}
     .board-dot {width:10px;height:10px;border-radius:50%;background:#34d399;box-shadow:0 0 0 5px #d1fae5}
-    .journey {position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 22px}
+    .journey {position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 18px}
     .journey:before {content:'';position:absolute;left:12%;right:12%;top:39px;border-top:2px dashed #c7c5fa}
     .journey-step {position:relative;z-index:1;display:flex;align-items:center;flex-direction:column;text-align:center;gap:9px}
     .journey-icon {width:76px;height:76px;display:grid;place-items:center;background:white;border:1px solid #dadbf6;border-radius:21px;box-shadow:0 10px 25px rgba(60,56,135,.09)}
@@ -142,10 +142,6 @@
     .journey-step small {font-size:.73rem;color:var(--muted)}
     .board-bottom {background:#f0edff;border-radius:15px;padding:12px 15px;font-size:.81rem;color:#4c3fa8}
     .board-bottom strong {color:#312e81}
-    .visual-stats {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-    .visual-stat {padding:12px;background:white;border:1px solid var(--line);border-radius:14px;text-align:center}
-    .visual-stat strong {display:block;font-size:1.25rem;color:#5145cf;line-height:1.25}
-    .visual-stat span {display:block;font-size:.7rem;color:var(--muted)}
     .project-art {height:184px;min-height:184px;padding:0;align-items:center;justify-content:center}
     .project-art:after {display:none}
     .project-art svg {width:100%;height:100%;display:block;position:relative;z-index:1;transition:transform .35s ease}
@@ -162,7 +158,7 @@
     .compact-details .tool-cloud {margin:14px 0 0}
     .section-head {max-width:760px}
     @media(max-width:850px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:32px}.visual-board{max-width:630px;width:100%}}
-    @media(max-width:620px){.hero h1{font-size:clamp(2.5rem,11vw,4rem)}.journey{gap:6px}.journey-icon{width:64px;height:64px}.journey-icon svg{width:35px;height:35px}.journey-step small{font-size:.67rem}.visual-board{padding:16px}.visual-stats{gap:7px}.visual-stat{padding:9px 4px}}
+    @media(max-width:620px){.hero h1{font-size:clamp(2.5rem,11vw,4rem)}.journey{gap:6px}.journey-icon{width:64px;height:64px}.journey-icon svg{width:35px;height:35px}.journey-step small{font-size:.67rem}.visual-board{padding:16px}}
 
     /* Interactive career journey */
     .career-intro { max-width:720px; }
@@ -243,8 +239,7 @@
             <div class="journey-step"><div class="journey-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 35V13m0 22h32"/><path d="m14 28 8-8 7 5 11-13"/><path d="M33 12h7v7"/></svg></div><strong>Improve</strong><small>Measure impact</small></div>
           </div>
           <div class="board-bottom"><span>Learning design is a <strong>performance solution</strong>, not just content.</span><span aria-hidden="true">↗</span></div>
-          <div class="visual-stats"><div class="visual-stat"><strong>13+</strong><span>Years in L&amp;D</span></div><div class="visual-stat"><strong>5</strong><span>Portfolio projects</span></div><div class="visual-stat"><strong>3</strong><span>Core strengths</span></div></div>
-        </aside>
+</aside>
       </div>
     </section>
 
