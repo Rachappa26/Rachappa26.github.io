@@ -163,6 +163,29 @@
     .section-head {max-width:760px}
     @media(max-width:850px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:32px}.visual-board{max-width:630px;width:100%}}
     @media(max-width:620px){.hero h1{font-size:clamp(2.5rem,11vw,4rem)}.journey{gap:6px}.journey-icon{width:64px;height:64px}.journey-icon svg{width:35px;height:35px}.journey-step small{font-size:.67rem}.visual-board{padding:16px}.visual-stats{gap:7px}.visual-stat{padding:9px 4px}}
+
+    /* Interactive career journey */
+    .career-intro { max-width:720px; }
+    .timeline { gap:14px; }
+    .career-card { background:var(--panel); border:1px solid var(--line); border-radius:19px; overflow:hidden; transition:border-color .2s,box-shadow .2s; }
+    .career-card[open] { border-color:rgba(79,70,229,.4); box-shadow:0 12px 35px rgba(43,54,100,.07); }
+    .career-card summary { display:grid; grid-template-columns:180px minmax(0,1fr) 26px; align-items:center; gap:20px; padding:23px 25px; cursor:pointer; list-style:none; }
+    .career-card summary::-webkit-details-marker { display:none; }
+    .career-card summary:focus-visible { outline:2px solid var(--accent); outline-offset:-4px; }
+    .career-date { color:var(--accent); font-weight:750; font-size:.85rem; }
+    .career-title { display:block; font-size:1.08rem; font-weight:750; line-height:1.35; }
+    .career-company { display:block; color:var(--muted); font-size:.91rem; margin-top:5px; }
+    .career-toggle { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--panel-2); color:var(--accent); font-weight:700; }
+    .career-toggle::before { content:'+'; font-size:1.25rem; }
+    .career-card[open] .career-toggle::before { content:'−'; }
+    .career-details { border-top:1px solid var(--line); padding:18px 25px 23px 225px; color:var(--muted); }
+    .career-details p { margin:0; }
+    .career-hint { font-size:.88rem; color:var(--muted); margin:-13px 0 18px; }
+    .education-card { transition:transform .2s,border-color .2s; }
+    .education-card:hover { transform:translateY(-2px); border-color:rgba(79,70,229,.3); }
+    .education-label { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; font-weight:800; margin-bottom:9px; }
+    @media(max-width:850px) { .career-card summary { grid-template-columns:1fr 26px; gap:8px; } .career-date { grid-column:1; } .career-heading { grid-column:1; } .career-toggle { grid-column:2; grid-row:1 / span 2; } .career-details { padding:17px 22px 22px; } }
+    @media(max-width:620px) { .career-card summary { padding:18px; } .education-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -398,15 +421,25 @@
 
     <section id="experience">
       <div class="wrap">
-        <div class="section-head reveal"><div class="eyebrow">Career journey</div><h2>Experience & education</h2><p>Selected experience from my professional background.</p></div>
+        <div class="section-head reveal"><div class="eyebrow">Career journey</div><h2>Experience &amp; education</h2><p class="career-intro">Explore the roles and qualifications behind my learning design practice.</p></div>
+        <p class="career-hint">Select a role to explore responsibilities and contributions.</p>
         <div class="timeline">
-          <article class="role reveal"><time>Oct 2022 – Present</time><div><h3>Team Lead – Instructional Design Group</h3><div class="company">Straive · Chennai, India</div><p>Lead and support the instructional design team; partner with clients and SMEs; translate learning requirements into objectives and learning solutions; oversee storyboards, course content, quality, timelines, and development practices.</p></div></article>
-          <article class="role reveal"><time>Aug 2020 – Sep 2022</time><div><h3>Instructional Designer</h3><div class="company">EduWorld Guide · Bengaluru, India</div><p>Coordinated learning programs and training calendars, monitored learner progress, collaborated with SMEs, and developed CBT/WBT materials using Articulate Storyline and Camtasia.</p></div></article>
-          <article class="role reveal"><time>Oct 2013 – Aug 2020</time><div><h3>Assistant Professor – Course & Content Designer</h3><div class="company">MVJ College of Engineering · Bengaluru, India</div><p>Designed curriculum assets, manuals, videos, and learning objectives; applied instructor-led, web-based, and problem-based learning approaches; supported staff training and student induction.</p></div></article>
+          <details class="career-card reveal" open>
+            <summary><span class="career-date">Oct 2022 – Present</span><span class="career-heading"><span class="career-title">Team Lead – Instructional Design Group</span><span class="career-company">Straive · Chennai, India</span></span><span class="career-toggle" aria-hidden="true"></span></summary>
+            <div class="career-details"><p>Lead and support the instructional design team; partner with clients and SMEs; translate learning requirements into objectives and learning solutions; oversee storyboards, course content, quality, timelines, and development practices.</p></div>
+          </details>
+          <details class="career-card reveal">
+            <summary><span class="career-date">Aug 2020 – Sep 2022</span><span class="career-heading"><span class="career-title">Instructional Designer</span><span class="career-company">EduWorld Guide · Bengaluru, India</span></span><span class="career-toggle" aria-hidden="true"></span></summary>
+            <div class="career-details"><p>Coordinated learning programs and training calendars, monitored learner progress, collaborated with SMEs, and developed CBT/WBT materials using Articulate Storyline and Camtasia.</p></div>
+          </details>
+          <details class="career-card reveal">
+            <summary><span class="career-date">Oct 2013 – Aug 2020</span><span class="career-heading"><span class="career-title">Assistant Professor – Course &amp; Content Designer</span><span class="career-company">MVJ College of Engineering · Bengaluru, India</span></span><span class="career-toggle" aria-hidden="true"></span></summary>
+            <div class="career-details"><p>Designed curriculum assets, manuals, videos, and learning objectives; applied instructor-led, web-based, and problem-based learning approaches; supported staff training and student induction.</p></div>
+          </details>
         </div>
         <div class="education-grid" style="margin-top:18px">
-          <article class="education-card reveal"><h3>M.Tech, Advanced Materials Technology</h3><p>Bangalore University (UVCE) · 2010–2012</p></article>
-          <article class="education-card reveal"><h3>B.E, Mechanical Engineering</h3><p>Visvesvaraya Technological University (VTU) · 2006–2010</p></article>
+          <article class="education-card reveal"><div class="education-label">Postgraduate</div><h3>M.Tech, Advanced Materials Technology</h3><p>Bangalore University (UVCE) · 2010–2012</p></article>
+          <article class="education-card reveal"><div class="education-label">Undergraduate</div><h3>B.E, Mechanical Engineering</h3><p>Visvesvaraya Technological University (VTU) · 2006–2010</p></article>
         </div>
       </div>
     </section>
