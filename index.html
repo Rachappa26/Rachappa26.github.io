@@ -30,7 +30,7 @@
     .hero-grid { position: relative; display: grid; grid-template-columns: 1.35fr .65fr; gap: 55px; align-items: center; }
     .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; }
     h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1.03; letter-spacing: -.065em; margin: 18px 0 20px; max-width: 780px; }
-    .gradient-text { background: linear-gradient(100deg,var(--accent),#b4c3ff 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .gradient-text { background: linear-gradient(100deg,#4338ca,#6155cf 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .hero p { color: var(--muted); max-width: 680px; font-size: 1.12rem; }
     .actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 30px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 19px; border-radius: 12px; border: 1px solid var(--line); font-weight: 750; transition: transform .2s, border-color .2s; cursor: pointer; }
@@ -192,6 +192,16 @@
     .profile-photo { width:112px; height:112px; flex:0 0 112px; border-radius:50%; object-fit:cover; object-position:center 30%; border:4px solid #fff; box-shadow:0 8px 26px rgba(79,70,229,.18); background:#ede9fe; }
     .hero-intro p { margin:0; }
     @media(max-width:620px) { .hero-intro { align-items:flex-start; gap:14px; } .profile-photo { width:84px; height:84px; flex-basis:84px; } }
+
+    /* Accessibility: WCAG AA-oriented text contrast and visible keyboard focus */
+    .gradient-text { background:linear-gradient(100deg,#4338ca,#6155cf 75%); -webkit-background-clip:text; background-clip:text; color:#4338ca; }
+    .btn-primary:hover, .btn-primary:focus-visible { background:#3730a3; border-color:#3730a3; color:#fff; }
+    .text-link:hover, .text-link:focus-visible { text-decoration:underline; text-underline-offset:3px; }
+    .filter:focus-visible, .menu-btn:focus-visible, .career-card summary:focus-visible { outline:3px solid #312e81; outline-offset:3px; }
+    .navlinks a:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #312e81; outline-offset:3px; }
+    .tag, .note { color:#514d69; }
+    @media (forced-colors: active) { .gradient-text { background:none; color:CanvasText; } .btn-primary, .filter.active { border:2px solid ButtonText; } }
+    @media (prefers-reduced-motion: reduce) { .project:hover, .skill-card:hover, .btn:hover { transform:none; } }
   </style>
 </head>
 <body>
@@ -212,11 +222,11 @@
           <div class="eyebrow">Instructional Design · Learning Experience · Digital Learning</div>
           <h1>Turning complex ideas into <span class="gradient-text">meaningful learning.</span></h1>
           <div class="hero-intro">
-            <img class="profile-photo" src="profile.jpg" alt="Professional portrait of Rachappa C T" width="112" height="112" loading="eager" decoding="async">
+            <img class="profile-photo" src="https://github.com/Rachappa26.png?size=256" alt="Portrait of Rachappa C T" width="112" height="112" loading="eager" decoding="async">
             <p>I'm <strong>Rachappa C T</strong>, an instructional design leader creating practical, engaging learning experiences that help people perform with confidence.</p>
           </div>
           <div class="actions">
-            <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+            <a class="btn btn-primary" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a>
             <a class="btn btn-primary" href="rojects/Rachappa_CT_Resume.pdf" download="Rachappa_CT_Resume.pdf">Download Resume <span aria-hidden="true">↓</span></a>
           </div>
           <div class="quick-tags">
@@ -497,6 +507,7 @@
       });
     }));
     document.getElementById('year').textContent = new Date().getFullYear();
+    if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -506,6 +517,7 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }
   </script>
   
 </body>
