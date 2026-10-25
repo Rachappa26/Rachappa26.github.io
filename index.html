@@ -198,6 +198,9 @@
     .tag, .note { color:#514d69; }
     @media (forced-colors: active) { .gradient-text { background:none; color:CanvasText; } .btn-primary, .filter.active { border:2px solid ButtonText; } }
     @media (prefers-reduced-motion: reduce) { .project:hover, .skill-card:hover, .btn:hover { transform:none; } }
+    /* Distinctive expertise tags: subtle interaction without relying on color alone */
+    .quick-tags .tag { transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
+    .quick-tags .tag:hover { transform: translateY(-2px); border-color:#7c70dd; background-color:#eeecff; }
   </style>
 </head>
 <body>
@@ -219,16 +222,16 @@
           <h1>Turning complex ideas into <span class="gradient-text">meaningful learning.</span></h1>
           <div class="hero-intro">
             <img class="profile-photo" src="https://github.com/Rachappa26.png?size=256" alt="Portrait of Rachappa C T" width="112" height="112" loading="eager" decoding="async">
-            <p>I'm <strong>Rachappa C T</strong>, an instructional design leader creating practical, engaging learning experiences that help people perform with confidence.</p>
+            <p>I'm <strong>Rachappa C T</strong>, an Instructional Design Leader with 13+ years of experience leading learning teams and creating engaging digital experiences that improve workplace performance.</p>
           </div>
           <div class="actions">
             <a class="btn btn-primary" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a>
             <a class="btn btn-primary" href="rojects/Rachappa_CT_Resume.pdf" download="Rachappa_CT_Resume.pdf">Download Resume <span aria-hidden="true">↓</span></a>
           </div>
           <div class="quick-tags">
-            <span class="tag">13+ years in L&amp;D</span>
-            <span class="tag">Learning strategy</span>
-            <span class="tag">Digital learning</span>
+            <span class="tag">Think Beyond Content</span>
+            <span class="tag">Design for Engagement</span>
+            <span class="tag">Drive Real Impact</span>
           </div>
         </div>
         <aside class="visual-board" aria-label="Visual overview of the learning design process">
